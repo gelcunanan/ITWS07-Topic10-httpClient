@@ -4,7 +4,7 @@ if (!$con) {
     die('Unable to conenct');
 }
 
-// CORS issues
+// for CORS 
 header('Content-Type: application/json');
 header("Access-Control-Allow-Headers: Content-Type");
 header('Access-Control-Allow-Origin: *');
@@ -25,14 +25,10 @@ if ($method == "GET") {
 }
 
 
-
-
-
 if ($method == "POST") {
     $input = json_decode(file_get_contents("php://input"), true); //decode of data from angular
     $name = $input['name'];
     $email = $input['email'];
-
 
     mysqli_query(
         $con,
@@ -40,14 +36,6 @@ if ($method == "POST") {
     );
     echo json_encode(["message" => "User added hehe 4G"]);
 }
-
-
-
-
-
-
-
-
 
 if ($method == "DELETE") {
     $input = json_decode(file_get_contents("php://input"), true);
