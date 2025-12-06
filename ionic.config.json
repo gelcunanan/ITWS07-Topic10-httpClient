@@ -1,5 +1,7 @@
 {
   "name": "hc",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular-standalone"
 }
